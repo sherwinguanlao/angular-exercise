@@ -1,0 +1,47 @@
+<div>
+	<span>{{ hello }}</span>
+
+	<div class="search-form shadow">
+		<div class="search-form-wrapper">
+			<div class="search-form-content">
+				<h1 class="noselect">Artist</h1>
+			</div>
+
+			<div class="search-form-content">
+				<form name="searchForm">
+					<span>Search</span>
+					<input name="searchInput" type="text" ng-model="search" autocomplete="off" required>
+					<div class="clear-left"></div>
+				</form>
+			</div>
+			
+			<div class="filter" ng-class="filterHide">
+				<span class="span-filter">Filter</span>
+				<select ng-model="searchBy" ng-options="x for x in searchOptions"></select>
+
+				<span  class="span-order">Order</span>
+				<div>
+					<span class="order" ng-class="order1" ng-click="orderByFunction('')">Ascending</span>
+				</div>
+				<div>
+					<span class="order" ng-class="order2" ng-click="orderByFunction('reverse')">Descending</span>
+				</div>
+			</div>
+
+			<div class="filter-toggle noselect" ng-click="toggleFilter()">{{toggleButtonLabel}}</div>
+		</div>
+
+		<div ng-show="search" class="result" ng-repeat="x in artist | filter : {name : search} | orderBy : searchBy:direction">
+			<a href="#detail/{{artist.indexOf(x)}}">
+				<div>
+					<img src="images/{{x.shortname}}_tn.jpg">
+				</div>
+				<div>
+					<p>{{x.name}}</p>
+					<p>{{x.reknown}}</p>
+				</div>
+				<div class="clear-left"></div>			
+			</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<div class="detail-container shadow">
+	<button class="details-nav-button left shadow" ng-click="prevFunction(artist.length)">◄</button>
+	<button class="details-nav-button right shadow" ng-click="nextFunction(artist.length)">►</button>
+	<div class="details">
+		<div>
+			<img src="images/{{artist[index].shortname}}_tn.jpg">
+		</div>
+		<div>
+			<span>{{artist[index].name}}</span>
+			<span>{{artist[index].reknown}}</span>
+		</div>
+		<div class="clear-left"></div>
+	</div>
+	<div class="bio">
+		{{artist[index].bio}}
+	</div>
+	<a href="#/">&laquo;Back to Search</a>
+</div>
