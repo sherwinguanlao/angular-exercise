@@ -7,7 +7,7 @@
             var deferred = $q.defer();
 
             this.getArtistDetails = function () {
-                return $http.get('data/data.json')
+                return $http.get('src/data/artist-data.json')
                     .then(function (response) {
                         deferred.resolve(response.data);
                         return deferred.promise;

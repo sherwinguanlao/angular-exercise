@@ -8,17 +8,17 @@
 		.config(['$routeProvider', function ($routeProvider) {
 			$routeProvider
 				.when('/', {
-					templateUrl: 'pages/main.html',
+					templateUrl: 'src/pages/main.html',
 					controller: 'DirectorySearchController',
 					controllerAs: 'DirectorySearch'
 				})
 				.when('/detail/:index', {
-					templateUrl: 'pages/detail.html',
+					templateUrl: 'src/pages/detail.html',
 					controller: 'DetailsController',
 					controllerAs: 'Details'
 				})
 				.otherwise({
-					templateUrl: "pages/error.html"
+					templateUrl: "src/pages/error.html"
 				});
 		}]);
 })();

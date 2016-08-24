@@ -32,7 +32,7 @@
 		<div ng-show="search" class="result" ng-repeat="x in artist | filter : {name : search} | orderBy : searchBy:direction">
 			<a href="#detail/{{artist.indexOf(x)}}">
 				<div>
-					<img src="images/{{x.shortname}}_tn.jpg">
+					<img src="src/images/{{x.shortname}}_tn.jpg">
 				</div>
 				<div>
 					<p>{{x.name}}</p>
