@@ -1,6 +1,4 @@
 <div>
-	<span>{{ hello }}</span>
-
 	<div class="search-form shadow">
 		<div class="search-form-wrapper">
 			<div class="search-form-content">
@@ -14,12 +12,12 @@
 					<div class="clear-left"></div>
 				</form>
 			</div>
-			
+
 			<div class="filter" ng-class="filterHide">
 				<span class="span-filter">Filter</span>
 				<select ng-model="searchBy" ng-options="x for x in searchOptions"></select>
 
-				<span  class="span-order">Order</span>
+				<span class="span-order">Order</span>
 				<div>
 					<span class="order" ng-class="order1" ng-click="orderByFunction('')">Ascending</span>
 				</div>
@@ -40,7 +38,7 @@
 					<p>{{x.name}}</p>
 					<p>{{x.reknown}}</p>
 				</div>
-				<div class="clear-left"></div>			
+				<div class="clear-left"></div>
 			</a>
 		</div>
 	</div>
