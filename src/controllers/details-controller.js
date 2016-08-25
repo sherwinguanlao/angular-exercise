@@ -22,11 +22,6 @@
 				}
 			};
 
-			ArtistService.getArtistDetails()
-				.then(function (result) {
-					$scope.artist = result;
-				}, function (error) {
-					console.log(error.statusText);
-				});
+			$scope.artist = ArtistService.getArtistDetails();
 		}]);
 })();

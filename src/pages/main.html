@@ -1,5 +1,5 @@
-<div>
-	<div class="search-form shadow">
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 search-form shadow">
 		<div class="search-form-wrapper">
 			<div class="search-form-content">
 				<h1 class="noselect">Artist</h1>
@@ -7,38 +7,49 @@
 
 			<div class="search-form-content">
 				<form name="searchForm">
-					<span>Search</span>
+					<span id="searchLabel">
+						<span id="searchLabelText">Search</span>
+					<span class="glyphicon glyphicon-search"></span>
+					</span>
 					<input name="searchInput" type="text" ng-model="search" autocomplete="off" required>
 					<div class="clear-left"></div>
 				</form>
 			</div>
 
 			<div class="filter" ng-class="filterHide">
-				<span class="span-filter">Filter</span>
-				<select ng-model="searchBy" ng-options="x for x in searchOptions"></select>
-
-				<span class="span-order">Order</span>
-				<div>
-					<span class="order" ng-class="order1" ng-click="orderByFunction('')">Ascending</span>
-				</div>
-				<div>
-					<span class="order" ng-class="order2" ng-click="orderByFunction('reverse')">Descending</span>
+				<div class="row">
+					<div class="col-sm-5 col-xs-12 filter-col">
+						<div id="filterLabel">Filter</div>
+						<select id="filterSelect" ng-model="searchBy" ng-options="x for x in searchOptions"></select>
+						<div class="clear-left"></div>
+					</div>
+					<div class="col-sm-7 col-xs-12 filter-col">
+						<span id="orderLabel">Order</span>
+						<div class="order-div">
+							<span class="order" ng-class="order1" ng-click="orderByFunction('')">Ascending</span>
+						</div>
+						<div class="order-div">
+							<span class="order round-corner" ng-class="order2" ng-click="orderByFunction('reverse')">Descending</span>
+						</div>
+						<div class="clear-left"></div>
+					</div>
 				</div>
 			</div>
 
-			<div class="filter-toggle noselect" ng-click="toggleFilter()">{{toggleButtonLabel}}</div>
+			<div class="filter-toggle noselect" ng-click="toggleFilter()">
+				<span>{{toggleButtonLabel}}</span>
+			</div>
 		</div>
 
 		<div ng-show="search" class="result" ng-repeat="x in artist | filter : {name : search} | orderBy : searchBy:direction">
 			<a href="#detail/{{artist.indexOf(x)}}">
 				<div>
-					<img src="src/images/{{x.shortname}}_tn.jpg">
+					<img src="../../images/{{x.shortname}}_tn.jpg">
 				</div>
-				<div>
+				<div id="resultName">
 					<p>{{x.name}}</p>
 					<p>{{x.reknown}}</p>
 				</div>
-				<div class="clear-left"></div>
 			</a>
 		</div>
 	</div>

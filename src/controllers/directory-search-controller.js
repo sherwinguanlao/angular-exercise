@@ -22,23 +22,18 @@
 			};
 
 			$scope.toggleButtonLabel = 'show filter';
-			$scope.filterHide = 'hidden';
+			$scope.filterHide = 'filter-hide';
 
 			$scope.toggleFilter = function () {
 				if ($scope.toggleButtonLabel == 'show filter') {
 					$scope.filterHide = '';
 					$scope.toggleButtonLabel = 'hide filter';
 				} else {
-					$scope.filterHide = 'hidden';
+					$scope.filterHide = 'filter-hide';
 					$scope.toggleButtonLabel = 'show filter';
 				}
 			};
 
-			ArtistService.getArtistDetails()
-				.then(function (result) {
-					$scope.artist = result;
-				}, function (error) {
-					console.log(error.statusText);
-				});
+			$scope.artist = ArtistService.getArtistDetails();
 		}]);
 })();

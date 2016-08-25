@@ -1,0 +1,77 @@
+ /* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .details-nav-button.left {
+        left: 10px;
+    }
+    .details-nav-button.right {
+        right: 10px;
+    }
+    .detail-container .details img {
+        position: relative;
+        left: 50%;
+        height: 120px;
+        width: 120px;
+        margin-left: -60px;
+    }
+    .details span{
+        text-align: center;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    #searchLabel #searchLabelText {
+       display: none;
+    }
+    #searchLabel .glyphicon {
+       display: block;
+    }
+    .search-form .filter {
+	    height: 100px;
+    }
+    #filterLabel, #orderLabel {
+        width: 30%;
+    }
+    #filterSelect {
+        width: 70%;
+    }
+    .order-div {
+        width: 35%;
+    }
+    .detail-container {
+        margin-top: 0;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    .search-form {
+	    margin-top: 0px;
+    }
+    .order-div span {
+        font-size: 12px;
+    }
+    .result {
+        height: 60px;
+        padding: 0;
+        border-right: solid 5px #27ae60;
+    }
+    .result img {
+        height: 40px;
+        width: 40px;
+    }
+    .result div p {
+        font-size: 12px;
+    }
+    #resultName {
+        top: 6px;
+    }
+    .detail-container .bio {
+        margin: 10px 0 0 0;
+        padding: 10px 0;
+    }
+    .details-nav-button {
+        height: 40px;
+        width: 30px;
+    }
+}
