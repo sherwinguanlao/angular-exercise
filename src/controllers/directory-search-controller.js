@@ -36,8 +36,8 @@
 
 			$scope.artists = [];
 			ArtistService.getArtistDetails()
-				.then(function (data) {
-					$scope.artists = data;
+				.then(function (response) {
+					$scope.artists = response.data;
 				});
 		}]);
 })();

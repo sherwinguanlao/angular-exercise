@@ -42,6 +42,9 @@
 		</div>
 
 		<div ng-show="search" class="result" ng-repeat="artist in artists | filter : {name : search} | orderBy : searchBy:direction">
+			
+			<!--<parent-of-some jkl="'haha'"></parent-of-some>-->
+
 			<a href="#detail/{{artists.indexOf(x)}}">
 				<div>
 					<img src="../images/{{artist.shortname}}_tn.jpg">

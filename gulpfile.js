@@ -5,10 +5,12 @@ var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
 var templateCache = require('gulp-angular-templatecache');
 
+gulp.task('default', ['useref', 'template']);
+
 gulp.task('useref', function () {
     return gulp.src('src/index.html')
         .pipe(useref())
-        .pipe(gulpIf('*.js', uglify()))
+        //.pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', cssnano()))
         .pipe(gulp.dest('wwwroot'))
 });
@@ -18,3 +20,4 @@ gulp.task('template', function () {
         .pipe(templateCache('templates.js', { module:'templates', standalone:true }))
         .pipe(gulp.dest('wwwroot/js'));
 });
+
