@@ -41,14 +41,14 @@
 			</div>
 		</div>
 
-		<div ng-show="search" class="result" ng-repeat="x in artist | filter : {name : search} | orderBy : searchBy:direction">
-			<a href="#detail/{{artist.indexOf(x)}}">
+		<div ng-show="search" class="result" ng-repeat="artist in artists | filter : {name : search} | orderBy : searchBy:direction">
+			<a href="#detail/{{artists.indexOf(x)}}">
 				<div>
-					<img src="../../images/{{x.shortname}}_tn.jpg">
+					<img src="../images/{{artist.shortname}}_tn.jpg">
 				</div>
 				<div id="resultName">
-					<p>{{x.name}}</p>
-					<p>{{x.reknown}}</p>
+					<p>{{artist.name}}</p>
+					<p>{{artist.reknown}}</p>
 				</div>
 			</a>
 		</div>

@@ -4,15 +4,15 @@
 		<button class="details-nav-button right shadow" ng-click="nextFunction(artist.length)">►</button>
 		<div class="row details">
 			<div class="col-md-4 col-sm-12">
-				<img src="../../images/{{artist[index].shortname}}_tn.jpg">
+				<img src="../images/{{artists[index].shortname}}_tn.jpg">
 			</div>
 			<div class="col-md-8 col-sm-12">
-				<span>{{artist[index].name}}</span>
-				<span>{{artist[index].reknown}}</span>
+				<span>{{artists[index].name}}</span>
+				<span>{{artists[index].reknown}}</span>
 			</div>
 		</div>
 		<div class="row bio">
-			{{artist[index].bio}}
+			{{artists[index].bio}}
 		</div>
 		<a href="#/">&laquo;Back to Search</a>
 	</div>

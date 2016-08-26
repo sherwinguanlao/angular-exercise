@@ -14,7 +14,7 @@ gulp.task('useref', function () {
 });
 
 gulp.task('template', function () {
-  return gulp.src('src/pages/*.html')
-    .pipe(templateCache())
-    .pipe(gulp.dest('wwwroot/pages'));
+    return gulp.src('src/pages/*.html')
+        .pipe(templateCache('templates.js', { module:'templates', standalone:true }))
+        .pipe(gulp.dest('wwwroot/js'));
 });

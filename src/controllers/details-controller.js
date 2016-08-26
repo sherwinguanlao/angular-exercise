@@ -22,6 +22,10 @@
 				}
 			};
 
-			$scope.artist = ArtistService.getArtistDetails();
+			$scope.artists = [];
+			ArtistService.getArtistDetails()
+				.then(function (data) {
+					$scope.artists = data;
+				});
 		}]);
 })();
