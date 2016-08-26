@@ -245,6 +245,10 @@ input.ng-invalid, input.ng-valid {
 	background-color: #27ae60;
 	color: #77ff77;
 }
+.details-nav-button[disabled] {
+    background-color: #aaa;
+    color: #777;
+}
 .details-nav-button.left {
 	left: -35px;
 }
