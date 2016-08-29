@@ -38,12 +38,18 @@
 (function () {
 	angular
 		.module('DirectorySearchApplication')
-		.controller('DirectorySearchController', ['$scope', 'ArtistService', function ($scope, ArtistService) {
+		.controller('DirectorySearchController', ['$scope', '$rootScope', 'ArtistService', function ($scope, $rootScope, ArtistService) {
 			$scope.searchOptions = ['name', 'reknown'];
 			$scope.searchBy = 'name';
 			$scope.direction = '';
-
+			
 			$scope.order1 = 'active';
+
+			$scope.search = localStorage['search'];
+
+			$scope.$watch('search', function() {
+			    localStorage['search'] = $scope.search? $scope.search :'';
+			});
 
 			$scope.orderByFunction = function (x) {
 				$scope.direction = x;
